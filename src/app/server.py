@@ -65,9 +65,10 @@ class RequestHandler(BaseHTTPRequestHandler):
                     original_image = original_image.convert('RGB')
                 original_image.save(converted_image_path, format=file_type.upper())  # Convert to the selected file type
 
+            content_type = 'image/'+file_type # Send the file type as the content-type header value.
             with open(converted_image_path, 'rb') as converted_file:
                 self.send_response(200)
-                self.send_header('Content-type', 'application/octet-stream')
+                self.send_header('Content-type', content_type)
                 self.send_header('Content-disposition', f'attachment; filename=converted_image.{file_type.lower()}')
                 self.end_headers()
                 self.wfile.write(converted_file.read())

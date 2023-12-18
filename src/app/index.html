@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Image Converter</h1>
+    <h1>Still Image Conversion</h1>
     <form id="uploadForm" enctype="multipart/form-data" action="/convert" method="post">
         <input type="file" id="imageInput" accept="image/*" required>
         <label for="fileType">Select File Type:</label>
@@ -21,8 +21,8 @@
         <button type="submit">Convert Image</button>
     </form>
 	<img id="originalImage" style="display: none;" src="" alt="">
-	<img id="convertedImage" src="" alt="Converted Image">
-    <a id="downloadLink" style="display: none;">Download Converted Image</a>
+	<img id="convertedImage" src="" alt="" class="center">
+	<a id="downloadLink" style="display: none;"></a>
     <script src="script.js"></script>
 </body>
 </html>
